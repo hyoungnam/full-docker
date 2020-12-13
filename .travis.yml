@@ -18,6 +18,6 @@ after_success:
 
   - echo "$DOCKER_HUB_PASSWORD" | docker login -u "$DOCKER_HUB_ID" --password-stdin
 
-  - docker push sdc99138/docker-frontend
-  - docker push sdc99138/docker-backend
-  - docker push sdc99138/docker-nginx
+  - docker push sdc99138/full-docker-frontend
+  - docker push sdc99138/full-docker-backend
+  - docker push sdc99138/full-docker-nginx
