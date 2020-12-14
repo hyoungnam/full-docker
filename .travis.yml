@@ -21,3 +21,16 @@ after_success:
   - docker push sdc99138/full-docker-frontend
   - docker push sdc99138/full-docker-backend
   - docker push sdc99138/full-docker-nginx
+
+deploy:
+  provider: elasticbeanstalk
+  region: "ap-northeast-2"
+  app: "eb-full-docker"
+  env: "EbFullDocker-env"
+  bucket_name: elasticbeanstalk-ap-northeast-2-758552788565
+  bucket_path: "eb-full-docker"
+  on:
+    branch: main
+  
+  access_key_id: $AWS_ACCESS_KEY
+  secret_access_key: $AWS_SECRET_ACCESS_KEY
